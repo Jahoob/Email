@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Test page</title>
+        <!-- <link rel="stylesheet" href="css/style.min.css"> -->
+        <style>
+            body {
+                background-color: #3c646e;
+            }
+            table {
+                background-color: white;
+                width: 600px;
+                margin: 0 auto;
+                text-align: center;
+                border: 1px solid black;
+                border-spacing: 0;
+            }
+            th, td {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Location</th>
+            </tr>
+            <tr>
+                <td>Bill</td>
+                <td>52</td>
+                <td>Atlanta</td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>23 </td>
+                <td>Toronto</td>
+            </tr>
+            <tr>
+                <td>Bart</td>
+                <td>44</td>
+                <td>New York</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <table>
+            <tr>
+                <th style="padding: 20px">
+                    Name
+                </th>
+            </tr>
+            <tr>
+                <td style="padding: 0;">
+                    <table>
+                        <tr>
+                            <td style="padding: 20px; background-color: red;
+                                width: 300px;">
+                                Bill
+                            </td>
+                            <td style="padding: 20px;background-color: green;
+                                width: 300">
+                                Bob
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 0;">
+                    <table>
+                        <tr>
+                            <td style="padding: 20px; background-color: red;
+                                width: 200px;">
+                                Bill
+                            </td>
+                            <td style="padding: 20px;background-color: green;
+                                width: 200px">
+                                Bob
+                            </td>
+                            <td style="padding: 20px;background-color: yellow;
+                                width: 200px">
+                                Bart
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <h1>People entered:</h1>
+        <h2 id="count-el">0</h2>
+        <p id="welcome-el">name</p>
+        <button id="increment__btn" class="increment__btn increment__btn--green"
+            onclick="incrementPeople()">ADD</button>
+        <button id="decrement__btn" class="decrement__btn decrement__btn--red"
+            onclick="decrementPeople()">REMOVE</button>
+        <button id="save__btn" class="save__btn save__btn--blue"
+            onclick="saveScore()">SAVE</button>
+        <p id="save-id">Previous entries: </p>
+
+        <button id="input-btn" onclick="clickButton()">purchase</button>
+        <p id="error"></p>
+
+        <!-- <span id="num1"></span>
+        <span id="num2"></span>
+        <br>
+        <button class="btn btn__add" onclick="addNumbers()">+</button>
+        <button class="btn btn__substract" onclick="substractNumbers()">-</button>
+        <button class="btn btn__divide" onclick="divideNumbers()">/</button>
+        <button class="btn btn__multiply" onclick="multiplyNumbers()">*</button>
+        <br>
+        <span id="sum">sum:</span>
+        <br>
+        <br>
+        <br> -->
+        <h1>blackjack</h1>
+        <p id="message-el">want to play?</p>
+        <p id="cards-el">cards:</p>
+        <p id="sum-el">sum:</p>
+        <button class="btn" onclick="startGame()">Start game</button>
+        <button class="btn" onclick="newGame()">New card</button>
+        <p id="player-el">Per: $145</p>
+
+
+        <div id="apple-shelf"></div>
+        <div id="pear-shelf"></div>
+
+        <input type="text" id="input-el">
+        <button id="input-btn">SAVE INPUT</button>
+
+        <button id="surprise">click me!</button>
+        <button class="button button__1">test</button>
+
+
+        <button class="button button__2">
+            janko klikanko
+        </button>
+        <ul>
+            <li>test</li>
+            <li>test 2</li>
+            <li>test 3</li>
+            <li>test 4</li>
+            <li>test 5</li>
+        </ul>
+
+
+
+        <div class="circle"></div>
+
+        <script src="js/script.js" defer></script>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "quokka": {
+    "babel": true,
+    "plugins": [
+      "jsdom-quokka-plugin",
+      "babel-alias-quokka-plugin"
+    ]
+  }
+}

@@ -1,0 +1,323 @@
+.theme_header {
+    color: $theme_blue;
+    @include Raleway(24px, 900, 70/62);
+
+    @media #{$from_580} {
+        @include Raleway(26px, 900, 70/62);
+    }
+
+    @media #{$from_768} {
+        @include Raleway(38px, 900, 70/62);
+    }
+
+    @media #{$from_1025} {
+        @include Raleway(58px, 900, 70/62, true);
+    }
+
+    @media #{$from_1440} {
+        @include Raleway(62px, 900, 70/62, true);
+    }
+
+    br {
+        display: none;
+        @media #{$from_1025} {
+            display: inline;
+        }
+    }
+
+    b,
+    strong,
+    .red {
+        color: $theme_red_purple;
+    }
+
+    .shadow_text {
+        display: inline;
+        position: relative;
+
+        @media #{$from_768} {
+            display: inline-block;
+        }
+
+        &:before {
+            display: none;
+
+            @media #{$from_1025} {
+                display: inline;
+            }
+        }
+        &:after {
+            display: none;
+
+            @media #{$from_1025} {
+                display: inline;
+            }
+        }
+    }
+
+    & + .button_wrapper {
+        margin-top: 15px;
+
+        @media #{$from_1025} {
+            margin-top: 40/15 * $gutter;
+        }
+    }
+}
+
+.red {
+    color: $theme_red_purple;
+}
+
+.text_editor_styles {
+    @include Raleway(20px, 600, 38/20, true);
+    letter-spacing: 0.02em;
+
+    h1 {
+        font-size: 160%;
+        font-weight: 700;
+        line-height: 1.607;
+        margin: 0 0 2 * $gutter 0;
+    }
+
+    h2 {
+        font-size: 140%;
+        font-weight: 700;
+        line-height: 1.607;
+        margin: 0 0 2 * $gutter 0;
+    }
+
+    h3 {
+        font-size: 130%;
+        font-weight: 700;
+        line-height: 1.607;
+        margin: 0 0 2 * $gutter 0;
+    }
+
+    h4 {
+        font-size: 120%;
+        font-weight: 700;
+        line-height: 1.607;
+        margin: 0 0 2 * $gutter 0;
+    }
+
+    h5 {
+        font-size: 110%;
+        font-weight: 700;
+        line-height: 1.607;
+        margin: 0 0 2 * $gutter 0;
+    }
+
+    h6 {
+        font-size: 100%;
+        font-weight: 700;
+        line-height: 1.607;
+        margin: 0 0 2 * $gutter 0;
+    }
+
+    p {
+        margin-bottom: 2 * $gutter;
+    }
+
+    strong {
+        font-weight: 700;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    a {
+        cursor: pointer;
+        color: $theme_blue;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    ul,
+    ol {
+        margin-bottom: 2 * $gutter;
+
+        li {
+            margin-bottom: 0.5 * $gutter;
+        }
+    }
+
+    ul {
+        list-style: none;
+
+        > li {
+            padding: 0 0 0 20px;
+            position: relative;
+
+            &:before {
+                content: '-';
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            ul {
+                padding: 10/15 * $gutter 0 0 0;
+            }
+
+            ol {
+                padding: 10/15 * $gutter 0 0 20px;
+            }
+        }
+    }
+
+    ol {
+        list-style: decimal;
+
+        > li {
+            ul {
+            }
+
+            ol {
+            }
+        }
+    }
+
+    img {
+        margin: 0 auto 2 * $gutter auto;
+        display: block;
+        max-width: 100%;
+        width: auto !important;
+        height: auto;
+    }
+
+    blockquote {
+        background: #f8f8f8;
+        width: 100%;
+        display: block;
+        border-left: 11/15 * $gutter solid $theme_red_purple;
+        margin-bottom: 2 * $gutter;
+        padding: 4 * $gutter 3 * $gutter;
+
+        @media #{$from_580} {
+            padding: 4 * $gutter calc(1 / 8 * (100% - 2 *#{$gutter}));
+        }
+
+        * {
+            margin: 0;
+            color: $theme_blue;
+            @include Raleway(24px, 900, 53/42);
+
+            @media #{$from_580} {
+                @include Raleway(26px, 900, 53/42);
+            }
+
+            @media #{$from_1025} {
+                @include Raleway(42/20 * 10em, 900, 53/42, true);
+            }
+        }
+    }
+
+    .brief_promo {
+        background: #ffc85b;
+        padding: 40/15 * $gutter 2 * $gutter;
+        margin: 3 * $gutter 0;
+
+        @media #{$from_580} {
+            padding: 50/15 * $gutter 70/15 * $gutter;
+        }
+
+        @media #{$from_1025} {
+            padding: 80/15 * $gutter 100/15 * $gutter;
+        }
+
+        .brief_promo_inner {
+            > h6 {
+                color: $theme_blue;
+                @include Raleway(2em, 900, 70/62);
+                margin: 0 0 1 * $gutter 0;
+
+                @media #{$from_580} {
+                    margin: 0 0 2 * $gutter 0;
+                    @include Raleway(2.6em, 900, 70/62);
+                }
+
+                @media #{$from_1025} {
+                    @include Raleway(3.1em, 900, 70/62);
+                }
+
+                span {
+                    color: #ffffff;
+                }
+
+                br {
+                    display: none;
+
+                    @media #{$from_580} {
+                        display: inline;
+                    }
+                }
+            }
+
+            .theme_button_2 {
+                font-size: 0.7em;
+            }
+        }
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th {
+        font-weight: 700;
+    }
+
+    td,
+    th {
+        border: 1px solid $theme_blue;
+        text-align: left;
+        padding: 5px;
+    }
+
+    tr:nth-child(even) {
+        background-color: transparetize($theme_blue, 0.8);
+    }
+}
+
+.scrolled_table {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    padding: 0 0 10px 0;
+    margin: 0 0 2 * $gutter 0;
+    position: relative;
+
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 2px $theme_light_blue;
+        background-color: #f2fbff;
+        border-radius: 2px;
+    }
+
+    &::-webkit-scrollbar {
+        background-color: #f2fbff;
+        height: 7px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background-color: $theme_blue;
+    }
+
+    @media #{$from_768} {
+        padding: 0;
+    }
+
+    .scrolled_table_inner {
+        min-width: 600px;
+        display: block;
+        width: auto;
+
+        @media #{$from_768} {
+            min-width: unset;
+        }
+    }
+}

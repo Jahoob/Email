@@ -1,0 +1,284 @@
+@import "../mixins/default.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(69, 98, 107);
+    background-color: rgb(60, 100, 110);
+    text-align: center;
+    // margin-top: 10%;
+    font-size: 20px;
+}
+
+button {
+    &.increment__btn,
+    &.decrement__btn {
+        padding: 10px 20px;
+        outline: none;
+        border-radius: 5px;
+
+        &--green {
+            background: turquoise;
+        }
+
+        &--red {
+            background: chocolate;
+        }
+
+        &--blue {
+            background: steelblue;
+        }
+    }
+
+    &.save__btn {
+        background: yellow;
+        @extend .increment__btn;
+    }
+}
+
+#save-id {
+    margin-bottom: 2 * $gutter;
+}
+
+p#error {
+    color: red;
+}
+
+.btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+}
+
+#apple-shelf {
+    background: red;
+    height: 50px;
+    width: 250px;
+    margin: 20px auto;
+}
+
+#pear-shelf {
+    background: yellowgreen;
+    height: 50px;
+    width: 250px;
+    margin: 20px auto;
+}
+
+input#input-el {
+    width: 90%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #5f9341;
+    margin-bottom: 20px;
+}
+
+button {
+    &#input-btn {
+    display: block;
+    margin: 20px auto;
+    background: #5f9341;
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border: none;
+    }
+}
+
+button#surprise {
+    display: block;
+    margin: 20px auto;
+    width: 300px;
+    height: 200px;
+    background: #6c2c5c;
+    $height: 250/15 * $gutter;
+    height: $height/2;
+}
+
+.circle {
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+@mixin jankoButtonowanko($color) {
+    // @content;
+    @extend .button;
+    background-color: $color;
+    color: darken($color, 20%);
+
+    &:hover,
+    &:active {
+        color: lighten($color, 20%);
+        transition: 0.3s all;
+    }
+}
+
+.button {
+    $color: green;
+    background-color: $color;
+    padding: 3 * $gutter 4 * $gutter;
+    font-size: 2rem;
+    @include jankoButtonowanko(rgb(145, 115, 95));
+}
+
+// %btn {
+//     $color: #5f9341;
+//     background-color: $color;
+//     padding: 2 * $gutter 4 * $gutter;
+// }
+
+.button__2 {
+    @include jankoButtonowanko(rosybrown);
+}
+
+ul {
+    li {
+        @include Jost(20px, 400, 30/15, true);
+    }
+}
+
+.content {
+    min-height: 50vh;
+    max-width: 100%;
+
+    &__inner {
+        height: $col12;
+
+        .homepage__banner {
+            height: $col12;
+            position: relative;
+            margin-bottom: 100/15 * $gutter;
+
+            @media #{$from_1025} {
+                margin-bottom: 0;
+                padding-top: 40/15 * $gutter;
+            }
+
+            &--wrapper {
+                height: $col12;
+
+                .container {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    gap: 2 * $gutter;
+                    position: relative;
+                    padding: 0 $gutter;
+                    flex-flow: column wrap;
+
+                    @media #{$from_1025} {
+                        flex-flow: row nowrap;
+                    }
+
+                    .img__layer {
+                        width: $col10;
+                        height: auto;
+                        position: relative;
+                        right: 4 * $gutter;
+                        left: 0;
+
+                        @media #{$from_1025} {
+                            position: relative;
+                            width: $col6;
+                            height: 888/15 * $gutter;
+                            flex-flow: row nowrap;
+                            left: 0;
+                        }
+                    }
+
+                    .img_wrapper.left__img {
+                        max-width: unset;
+                        margin: 0;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        position: static;
+                        z-index: 2;
+
+                        @media #{$from_1025} {
+                            position: absolute;
+                            left: -9.3rem;
+                        }
+
+                        .overlay {
+                            background: rgba(238, 48, 72, 0.2);
+                            overflow: hidden;
+                            height: 100%;
+                            width: 100%;
+                            position: absolute;
+                            top: 0;
+                            z-index: 2;
+                        }
+                    }
+                }
+
+                .content__layer {
+                    width: $col10;
+                    position: relative;
+
+                    @media #{$from_1025} {
+                        width: $col6;
+                    }
+                    // padding-left: $gutter;
+
+                    .text__wrapper {
+                        background-color: rgb(146, 61, 61);
+
+                        h2 {
+                            @include Jost(45px, 700, 55/45, true);
+
+                            @media #{$from_768} {
+                                @include Jost(60px, 700, 70/60, true);
+                            }
+
+                            @media #{$from_1025} {
+                                @include Jost(75px, 700, 90/75, true);
+                            }
+
+                            // strong,
+                            // b {
+                            // }
+                        }
+                    }
+                }
+
+                .background {
+                    position: absolute;
+                    top: 30%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 6;
+                    z-index: -1;
+
+                    .img_wrapper {
+                        width: 560/15 * $gutter;
+
+                        img {
+                            width: $col12;
+                        }
+                    }
+                }
+
+                .arrow-down {
+                    position: absolute;
+                    right: 0;
+                    bottom: 51/15 * $gutter;
+                    padding: 0 $gutter;
+
+                    .img_wrapper {
+                        width: 21/15 * $gutter;
+
+                        img {
+                            width: $col12;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,116 @@
+$col1: 8.33%;
+$col2: 16.66%;
+$col3: 25%;
+$col4: 33.33%;
+$col5: 41.66%;
+$col6: 50%;
+$col7: 58.33%;
+$col8: 66.66%;
+$col9: 75%;
+$col10: 83.33%;
+$col11: 91.66%;
+$col12: 100%;
+
+// --------------------------------------------------
+// VARIABLES
+// --------------------------------------------------
+
+$theme_black: #212121;
+$theme_navy_blue: #191d48;
+$theme_blue: #21238c;
+$theme_light_blue: #1bc1ef;
+$theme_red: #df4d74;
+$theme-color: #fff;
+
+$upto_1280: "(max-width: 1280px)";
+$upto_1024: "(max-width: 1024px)";
+$upto_768: "(max-width: 768px)";
+$upto_580: "(max-width: 580px)";
+
+$scale_06: 0.6;
+$scale_07: 0.7;
+$scale_08: 0.8;
+
+$em_base: 10px;
+$rem_base: 15px;
+$gutter: 1rem;
+$gutter_px: $rem_base;
+
+$scale_hd: 0.75; //scale factor - create yours, worth using
+$scale_hd_plus: 0.85;
+$page_default_width: 1370px;
+$page_content_width: 1200px;
+
+// $header_height: 90px;
+$scale_font: $scale_hd; //for fonts as refault rem scale
+
+$size_default: 10px;
+$weight_default: 400;
+$line_height_default: 1.25;
+
+$clip_top_width: $page_default_width; // "largest" media query screen size that fluid mixins are using it as default clipping point. In most cases it's default page width.
+$clip_bottom_width: 480px; //"smallest" media screen query size that fluid mixins are using it as default clipping point.
+
+// --------------------------------------------------
+// VARIABLES
+// --------------------------------------------------
+
+$em_base: 10px;
+$rem_base: 15px;
+$gutter: 1rem;
+$gutter_px: $rem_base;
+
+$page_default_width: 1920px;
+$page_content_width: 1640px;
+$page_relative_content_width: 1640/15 * $gutter;
+
+$upto_1920: "(max-width: 1920px)";
+$upto_1280: "(max-width: 1280px)";
+$upto_1024: "(max-width: 1024px)";
+$upto_768: "(max-width: 768px)";
+$upto_580: "(max-width: 580px)";
+
+$from_1921: "(min-width: 1921px)";
+$from_1440: "(min-width: 1440px)";
+$from_1280: "(min-width: 1280px)";
+$from_1025: "(min-width: 1025px)";
+$from_768: "(min-width: 768px)";
+$from_580: "(min-width: 580px)";
+
+// $header_height: 90px;
+// $scale_font: $scale_hd;  //for fonts as refault rem scale
+
+// --------------------------------------------------
+// VARIABLES FOR MIXINS AND GENERAL STUFF
+// --------------------------------------------------
+$size_default: 10px;
+$weight_default: 400;
+$line_height_default: 1.25;
+
+$clip_top_width: $page_default_width; // "largest" media query screen size that fluid mixins are using it as default clipping point. In most cases it's default page width.
+$clip_bottom_width: 480px; //"smallest" media screen query size that fluid mixins are using it as default clipping point.
+
+$theme_blue: #102e53;
+$theme_red_purple: #e9036e;
+$theme_light_blue: #688bb7;
+$label_black: #252525;
+$form_background_bright: #f4f4f4;
+$form_background_dark: hsla(0, 0%, 80%, 0.6);
+$form_background_bright-hover: #cccccc;
+$form_font_dark: #333;
+$form_font_white: #ffffff;
+$site_header_height: 122/15 * $gutter;
+$error_color: #f00;
+$gray_font: #9f9f9f;
+
+$theme__color: #454fa0;
+$font__color--black: #111111;
+$font__color--white: #ffffff;
+$color--black: #111111;
+$color--white: #ffffff;
+$background__color: #f2f2f2;
+
+$group__color: #111111;
+$concept__color: #454fa0;
+$contract__color: #f37029;
+$locum__color: #ee3048;

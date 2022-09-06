@@ -1,0 +1,260 @@
+html {
+    font-size: $rem_base;
+    @include flFont($rem_base * 0.75, $rem_base, 1024px, 1280px);
+
+    /*
+        this mixin equals to:
+
+        body {
+            font-size: 7.5px;
+        }
+
+        @media screen and (min-width: 1440px){
+            body {
+                font-size: calc(7.5px + 2.5 * ((100vw - 1440px) / 480));
+            }
+        }
+        @media screen and (min-width: 1920px){
+            body {
+                font-size: 10px;
+            }
+        }
+    */
+}
+
+body {
+    font-family: futura-pt, sans-serif;
+    font-size: $em_base;
+    line-height: 1.25;
+    margin: 0;
+    overflow-x: hidden;
+    @include flFont($em_base * 0.75, $em_base, 1024px, 1280px);
+    background: #f3f3f3;
+    padding-top: 55px;
+
+    @media #{$from_1025} {
+        padding-top: 130/15 * $gutter;
+    }
+}
+
+input,
+textarea {
+    font-family: futura-pt, sans-serif;
+}
+
+.site_content {
+    width: 100%;
+    overflow: hidden;
+}
+
+.img_wrapper {
+    display: inline-block;
+    img {
+        display: grid;
+        max-width: 100%;
+    }
+}
+
+.svg_wrapper {
+    display: inline-block;
+    svg,
+    img {
+        display: grid;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.loader_spinner > div {
+    width: 18px;
+    height: 18px;
+    background-color: #000;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+
+    @include flProperty("width", 18px * $scale_hd, 18px, 1440px);
+    @include flProperty("height", 18px * $scale_hd, 18px, 1440px);
+}
+
+.loader_spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+
+.loader_spinner .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+    0%,
+    80%,
+    100% {
+        -webkit-transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1);
+    }
+}
+
+@keyframes sk-bouncedelay {
+    0%,
+    80%,
+    100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.cookies_popup {
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    @include boxShadow(0, 0, 3px, 0, rgba(0, 0, 0, 0.85));
+    background: #fff;
+    padding: 1.5 * $gutter 0;
+    z-index: 1000;
+    width: 100%;
+
+    &.hidden {
+        display: none;
+    }
+
+    .cookies_popup_inner {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        > .close {
+            position: absolute;
+            top: $gutter;
+            right: $gutter;
+            background: none;
+            padding: 0;
+            margin: 0;
+            border: none;
+            cursor: pointer;
+            @include FuturaPt(48px, 500, 1);
+            display: none;
+
+            @media #{$from_768} {
+                display: inline-flex;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .cookies_text {
+            padding: 0 $gutter;
+            text-align: center;
+            margin: 0 0 1 * $gutter 0;
+            width: $col12;
+            max-height: 30vh;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar-track {
+                -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.15);
+                background-color: #eae9e5;
+            }
+
+            &::-webkit-scrollbar {
+                background-color: #eae9e5;
+                height: 8px;
+                width: 4px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 5px;
+                background-color: #687d26;
+            }
+
+            @media #{$from_768} {
+                text-align: left;
+                height: auto;
+            }
+
+            h6 {
+                margin: 0 0 $gutter 0;
+                @include FuturaPt(14px, 400, 23/18);
+
+                @media #{$from_1025} {
+                    @include FuturaPt(16px, 400, 23/18, true);
+                }
+            }
+
+            p {
+                @include FuturaPt(12px, 400, 24/14);
+
+                a {
+                    color: $theme_blue;
+                }
+            }
+        }
+
+        .button_wrapper {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 $gutter;
+            width: $col12;
+            margin: 0 0 $gutter 0;
+
+            @media #{$from_768} {
+                width: auto;
+                margin: 0;
+            }
+
+            a,
+            button {
+                @include FuturaPt(10px, 700, 1);
+                height: 30px;
+                user-select: none;
+
+                @media #{$from_580} {
+                    @include FuturaPt(13px, 700, 1);
+                    height: 35px;
+                }
+
+                @media #{$from_1025} {
+                    @include FuturaPt(14px, 700, 1, true);
+                    height: 40px;
+                }
+            }
+        }
+    }
+}
+
+sup {
+    font-size: 70%;
+    vertical-align: super;
+}
+
+sub {
+    font-size: 70%;
+    vertical-align: sub;
+}
+
+i {
+    font-style: italic;
+}
